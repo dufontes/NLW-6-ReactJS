@@ -1,5 +1,5 @@
-import logoImg from '../assets/images/logo.svg';
-import logoDarkImg from '../assets/images/logo-dark.svg';
+import logoImg from '../../assets/images/logo.svg';
+import logoDarkImg from '../../assets/images/logo-dark.svg';
 
 type LogoImgProps = {
   theme: string;

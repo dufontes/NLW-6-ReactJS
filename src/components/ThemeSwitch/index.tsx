@@ -1,4 +1,4 @@
-import '../styles/theme-switch.scss';
+import './styles.scss';
 
 type Theme = 'light' | 'dark';
 
