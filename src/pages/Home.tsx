@@ -1,8 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
 import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
-import logoDarkImg from '../assets/images/logo-dark.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
 
 import { Button } from '../components/Button';
@@ -14,6 +12,7 @@ import '../styles/auth.scss'
 import { FormEvent, useState } from 'react';
 import { database } from '../services/firebase';
 import { useTheme } from '../hooks/useTheme';
+import { LogoImg } from '../components/LogoImg';
 
 export function Home() {
 	const history = useHistory();
@@ -58,7 +57,7 @@ export function Home() {
 			<main>
 				<div className="main-content">
 					<ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
-					<img src={theme == 'light' ? logoImg : logoDarkImg} alt="LetMeAsk" />
+					<LogoImg theme={theme}></LogoImg>
 					<button onClick={handleCreateRoom} className="create-room">
 						<img src={googleIconImg} alt="Logo do Google" />
 						Crie sua sala com o google

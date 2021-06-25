@@ -96,4 +96,33 @@
       }
     }
   }
+
+  &.dark {
+    header {
+      background-color: #3a3a3f !important;
+      border-bottom: 1px solid #151519;
+    }
+
+    main {
+      .room-title h1 {
+        color: #f8f8f8 !important;
+      }
+
+      form {
+        textarea {
+          background: #3a3a3f !important;
+          color: #fff !important;
+        }
+
+        .form-footer {  
+          .user-info {
+            span {
+              color: #d2d2d2;
+            }
+          }
+        }
+      }
+    }
+  }
+
 }

@@ -2,8 +2,10 @@ import { FormEvent, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
 import { Button } from '../components/Button';
+import { LogoImg } from '../components/LogoImg';
 import { RoomCode } from '../components/RoomCode';
 import { useAuth } from '../hooks/useAuth';
+import { useTheme } from '../hooks/useTheme';
 import { database } from '../services/firebase';
 
 import '../styles/room.scss';
@@ -37,6 +39,8 @@ type Question = {
 
 export function Room() {
   const { user } = useAuth();
+  const { toggleTheme, theme } = useTheme();
+
   const params = useParams<RoomParams>();
   const [newQuestion, setNewQuestion] = useState('');
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -93,10 +97,10 @@ export function Room() {
   }
 
   return (
-    <div id="page-room">
+    <div id="page-room" className={theme}>
       <header>
         <div className="content">
-          <img src={logoImg} alt="" />
+          <LogoImg theme={theme}></LogoImg>
           <RoomCode code={params.id} />
         </div>
       </header>
@@ -126,7 +130,7 @@ export function Room() {
             <Button type="submit" disabled={!user}>Enviar Pergunta</Button>
           </div>
         </form>
-        {JSON.stringify(questions)}
+        
       </main>
     </div>
   )

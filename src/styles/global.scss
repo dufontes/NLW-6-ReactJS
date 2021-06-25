@@ -7,6 +7,11 @@
 body {
    background-color: #f8f8f8;
    color: #29292e;
+
+   &.dark {
+      background-color: #29292e;
+      color: #f8f8f8;
+   }
 }
 
 body, input, button, textarea {
