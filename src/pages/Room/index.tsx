@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Button } from '../../components/Button';
 import { LogoImg } from '../../components/LogoImg';
 import { Question } from '../../components/Question';
@@ -64,7 +64,9 @@ export function Room() {
     <div id="page-room" className={theme}>
       <header>
         <div className="content">
-          <LogoImg theme={theme}></LogoImg>
+          <Link to="/">
+            <LogoImg theme={theme}></LogoImg>
+          </Link>
           <ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
           <RoomCode code={params.id} />
         </div>

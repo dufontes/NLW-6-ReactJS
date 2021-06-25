@@ -10,7 +10,7 @@
       justify-content: space-between;
       align-items:center;
 
-      > img {
+      img {
         max-height: 45px;
       }
 
@@ -53,6 +53,7 @@
     }
 
     form {
+      margin-bottom: 24px;
       textarea {
         width: 100%;
         border: 0;
