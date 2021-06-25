@@ -13,6 +13,7 @@ import { FormEvent, useState } from 'react';
 import { database } from '../../services/firebase';
 import { useTheme } from '../../hooks/useTheme';
 import { LogoImg } from '../../components/LogoImg';
+import toast from 'react-hot-toast';
 
 export function Home() {
 	const history = useHistory();
@@ -39,12 +40,12 @@ export function Home() {
 		const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
 		if(!roomRef.exists()){
-			alert("room code does not exist");
+			toast.error('Este código de sala não existe!');
 			return;
 		}
 
 		if(roomRef.val().closedAt){
-			alert("room already closed.");
+			toast.error('Esta sala já está fechada!');
 			return;
 		}
 

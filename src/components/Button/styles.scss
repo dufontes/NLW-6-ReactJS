@@ -20,7 +20,7 @@
     }
 
     &.outlined {
-        background-color: transparent !important;
+        background-color: #f8f8f8;
         border: 1px solid #835afd;
         color: #835afd;
     }
@@ -32,5 +32,11 @@
     &:disabled {
         opacity: 0.6;
         cursor: not-allowed;
+    }
+}
+
+.dark .button {
+    &.outlined {
+        background-color: #29292e;
     }
 }

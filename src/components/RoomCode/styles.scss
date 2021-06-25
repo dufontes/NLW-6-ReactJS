@@ -9,6 +9,10 @@
 
   display: flex;
 
+  &:hover  {
+    filter: brightness(0.9);
+  }
+
   div {
     background: #835afd;
     padding: 0 12px;
@@ -26,11 +30,13 @@
     width: 240px;
     font-size: 14px;
     font-weight: 500;
+
+    transition: filter(0.2s);
   }
 
 }
 
 .dark .room-code {
-  background: #29292e;
+  background: #2f2f35;
   color: #fff;
 }
