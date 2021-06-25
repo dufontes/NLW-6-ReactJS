@@ -21,7 +21,7 @@ export function NewRoom() {
 	async function handleCreateRoom(event: FormEvent) {
 		event.preventDefault();
 
-		if(newRoom.trim() == ''){
+		if(newRoom.trim() === ''){
 			return;
 		}
 
@@ -46,6 +46,7 @@ export function NewRoom() {
 			<main>
 				<div className="main-content">
 					<ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
+					<div className="spacer"></div>
 					<LogoImg theme={theme}></LogoImg>
 					<h2>Criar uma nova sala</h2>
 					<form onSubmit={handleCreateRoom}>

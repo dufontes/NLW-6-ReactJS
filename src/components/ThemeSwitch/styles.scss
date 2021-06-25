@@ -3,7 +3,7 @@
   flex-direction: column;
   margin: auto;
   text-align: center;
-  width: 50%;
+  width: 90px;
   transform: translateY(5%);
 
   label, .toggle {
@@ -15,7 +15,6 @@
     background-color: rgba(0,0,0,.1);
     border-radius: 100px;
     position: relative;
-    margin-bottom: 6rem; 
     cursor: pointer;
   }
   .toggle {
@@ -28,8 +27,8 @@
   .names {
     font-size: 90%;
     font-weight: bolder;
-    width: 65%;
-    margin-left: 17.5%;
+    width: 74%;
+    margin-left: 14%;
     margin-top: .5%;
     position: absolute;
     display: flex;
@@ -37,9 +36,15 @@
     user-select: none;
   }
 
+  .names p img {
+    width: 20px;
+    height: 20px;
+  }
+
   .names p {
     margin-top: 5px !important;
   }
+
   .dark {
     opacity: .5;
   }
@@ -50,7 +55,7 @@
 
   &.dark .toggle{
     transform: translateX(100%);
-    background-color: #34323D;
+    background-color: #444;
   }
   &.dark .dark{
     opacity: 1;

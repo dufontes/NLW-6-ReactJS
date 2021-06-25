@@ -51,6 +51,10 @@
         align-items: stretch;
         text-align: center;
 
+        .spacer {
+            margin: 25px 0;
+        }
+
         > img {
             align-self: center;
         }

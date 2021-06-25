@@ -7,6 +7,6 @@ type LogoImgProps = {
 
 export function LogoImg(props: LogoImgProps) {
   return (
-    <img src={props.theme == 'light' ? logoImg : logoDarkImg} alt="LetMeAsk" />
+    <img src={props.theme === 'light' ? logoImg : logoDarkImg} alt="LetMeAsk" />
   );
 }

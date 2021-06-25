@@ -1,3 +1,6 @@
+import iconLight from '../../assets/images/icon-light.svg';
+import iconDark from '../../assets/images/icon-dark.svg';
+
 import './styles.scss';
 
 type Theme = 'light' | 'dark';
@@ -14,8 +17,8 @@ export function ThemeSwitch(props: ThemeSwitchProps) {
       <label htmlFor="switch">
         <div className="toggle"></div>
         <div className="names">
-          <p className="light">Light</p>
-          <p className="dark">Dark</p>
+          <p className="light"><img src={iconLight} alt="" /></p>
+          <p className="dark"><img src={iconDark} alt="" /></p>
         </div>
       </label>
     </div>

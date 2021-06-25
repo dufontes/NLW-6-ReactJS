@@ -32,7 +32,7 @@ export function Home() {
 	async function handleJoinRoom(event: FormEvent){
 		event.preventDefault();
 
-		if(roomCode.trim() == ''){
+		if(roomCode.trim() === ''){
 			return;
 		}
 
@@ -40,6 +40,11 @@ export function Home() {
 
 		if(!roomRef.exists()){
 			alert("room code does not exist");
+			return;
+		}
+
+		if(roomRef.val().closedAt){
+			alert("room already closed.");
 			return;
 		}
 
@@ -57,6 +62,7 @@ export function Home() {
 			<main>
 				<div className="main-content">
 					<ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
+					<div className="spacer"></div>
 					<LogoImg theme={theme}></LogoImg>
 					<button onClick={handleCreateRoom} className="create-room">
 						<img src={googleIconImg} alt="Logo do Google" />
