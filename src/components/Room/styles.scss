@@ -1,0 +1,47 @@
+a.room {
+  display: flex;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  margin-top: 16px;
+  text-decoration: none;
+  justify-content: space-between;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+
+  p {
+    font-family: 'Popping', sans-serif;
+    font-size: 18px;
+    color: #29292e;
+  }
+
+  .questions-info {
+    display: flex;
+    align-items: center;
+    
+    span {
+      margin-left: 8px;
+      color: #737380;
+      font-size: 16px;
+    }
+
+    gap: 8px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+  }
+}
+
+.dark .room {
+  background-color: #1c1c20;
+
+  p {
+    color: #ccc;
+  }
+}
