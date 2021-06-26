@@ -30,6 +30,15 @@ export function Home() {
 
 	}
 
+	async function handleListMyRooms() {
+		if (!user) {
+			await signInWithGoogle();
+		}
+
+		history.push('/admin/rooms');
+
+	}
+
 	async function handleJoinRoom(event: FormEvent){
 		event.preventDefault();
 
@@ -65,10 +74,14 @@ export function Home() {
 					<ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
 					<div className="spacer"></div>
 					<LogoImg theme={theme}></LogoImg>
+					
 					<button onClick={handleCreateRoom} className="create-room">
 						<img src={googleIconImg} alt="Logo do Google" />
 						Crie sua sala com o google
 					</button>
+					{user ? (
+						<Button isOutlined onClick={handleListMyRooms} >Ver minhas salas</Button>
+					) : ''}
 					<div className="separator">ou entre em uma sala</div>
 					<form onSubmit={handleJoinRoom}>
 						<input

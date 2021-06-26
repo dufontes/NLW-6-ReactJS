@@ -8,6 +8,7 @@ import { AuthContextProvider } from './contexts/AuthContext';
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import { Room } from './pages/Room';
 import { AdminRoom } from './pages/AdminRoom';
+import { MyRooms } from './pages/MyRooms';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/rooms/new" component={NewRoom} />
             <Route path="/rooms/:id" component={Room} />
             <Route path="/admin/rooms/:id" component={AdminRoom} />
+            <Route path="/admin/rooms" component={MyRooms} />
           </Switch>
         </AuthContextProvider>
       </ThemeContextProvider>

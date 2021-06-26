@@ -1,0 +1,40 @@
+import { Link, useHistory, useParams } from "react-router-dom";
+import { LogoImg } from "../../components/LogoImg";
+import { ThemeSwitch } from "../../components/ThemeSwitch";
+import { useAuth } from "../../hooks/useAuth";
+import { useTheme } from "../../hooks/useTheme";
+
+import './styles.scss';
+
+export function MyRooms(){
+  const { user } = useAuth();
+  const { toggleTheme, theme } = useTheme();
+  const history = useHistory();  
+  const rooms = [1,2,3];
+
+  return (
+    <div id="page-my-rooms" className={theme}>
+      <header>
+        <div className="content">
+          <Link to="/">
+            <LogoImg theme={theme}></LogoImg>
+          </Link>
+          <ThemeSwitch theme={theme} toggleTheme={toggleTheme}></ThemeSwitch>
+        </div>
+      </header>
+
+      <main>
+        <div className="list-title">
+          <h1>Minhas Salas</h1>
+          { rooms.length > 0 && <span>{ rooms.length } salas(s)</span> }
+        </div>
+        <div className="user-info">
+          <img src={user?.avatar} alt={user?.name} />
+          <span>{user?.name}</span>
+        </div>
+        
+        
+      </main>
+    </div>
+  );
+}
